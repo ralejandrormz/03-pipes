@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import localEs from '@angular/common/locales/es'
 import { registerLocaleData} from '@angular/common'
 
+// Pipes
 import { CapitalizedPipe } from './pipes/capitalized.pipe';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
 

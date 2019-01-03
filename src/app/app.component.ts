@@ -32,7 +32,7 @@ export class AppComponent {
   })
 
   date  = new Date();
-
+  
   video = "ixm2KvrnmCk";
 
 }
