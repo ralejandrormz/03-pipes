@@ -1,20 +1,107 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
 
+    <br>
+    <h1>Pipes</h1>
+
+    <table class="table table-hover">
+        
+        <thead>
+            <tr>
+                <th scope="col">Variable</th>
+                <th scope="col">Pipe</th>
+                <th scope="col">Producto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> UPPERCASE </td>
+                <td> {{ name | uppercase }} </td>
+            </tr>
+            <tr>
+                <td> {{ name }} </td>
+                <td> lowercase </td>
+                <td> {{ name | lowercase }} </td>
+            </tr>
+            <tr>
+                <td> {{ name }} </td>
+                <td> slice:3 </td>
+                <td> {{ name | slice:3 }} </td>
+            </tr>
+            <tr>
+                <td> {{ name }} </td>
+                <td> slice:0:3 </td>
+                <td> {{ name | slice:0:3 }} </td>
+            </tr>
+            <tr>
+                <td> {{ arr }} </td>
+                <td> slice:1:5 </td>
+                <td> {{ arr | slice:1:5 }} </td>
+            </tr>
+            <tr>
+                <td> {{ PI }} </td>
+                <td> number:'3.0-0' </td>
+                <td> {{ PI | number:'3.0-0' }} </td>
+            </tr>
+            <tr>
+                <td> {{ PI }} </td>
+                <td> number:'1.0-3' </td>
+                <td> {{ PI | number:'1.0-3' }} </td>
+            </tr>
+            <tr>
+                <td> {{ a }} </td>
+                <td> percent </td>
+                <td> {{ a | percent }} </td>
+            </tr>
+            <tr>
+                <td> {{ a }} </td>
+                <td> percent:'2.2-4' </td>
+                <td> {{ a | percent:'2.2-4' }} </td>
+            </tr>
+            <tr>
+                <td> {{ salary }} </td>
+                <td> currency </td>
+                <td> {{ salary | currency }} </td>
+            </tr>
+            <tr>
+                <td> {{ salary }} </td>
+                <td> currency:'MXN':'symbol':'3.2-4' </td>
+                <td> {{ salary | currency : 'MXN' : 'symbol' : '3.2-4' }} </td>
+            </tr>
+            <tr>
+                <td> {{ promiseValue }} </td>
+                <td> async </td>
+                <td> {{ promiseValue | async  }} </td>
+            </tr>
+            <tr>
+                <td> {{ date }} </td>
+                <td> date </td>
+                <td> {{ date | date  }} </td>
+            </tr>
+            <tr>
+                <td> {{ date }} </td>
+                <td> date : 'GG EE dd-MMM-yy hh:mm:ss aa'</td>
+                <td> {{ date | date : 'GG EE dd-MMM-yy hh:mm:ss aa'  }} </td>
+            </tr>
+            <tr>
+                <td> {{ nameLower }} </td>
+                <td> nameLower | capitalized:'rafa':'manzo'  </td>
+                <td> {{ nameLower | capitalized:'rafa':'manzo'    }} </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <h3>Uso de slice</h3>
+    <p>El pipe slice muestra los elementos desde la posicion 5 a la 20, sin error de acceso a un indice fuera del arreglo.
+    </p>
+    <ul>
+        <li *ngFor="let item of arr | slice:5:20"> {{ item }} </li>
+    </ul>
+
+    <h4> JSON </h4>
+    <pre> {{ heroe | json }} </pre>
+
+    <h4>Recursos externos <small>vídeo</small></h4>
+    <iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</div>
