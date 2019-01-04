@@ -33,6 +33,7 @@ export class AppComponent {
 
   date  = new Date();
   
-  video = "ixm2KvrnmCk";
-
+  video = "AZ3fmcnG8oY";
+  
+  activate:boolean = true;
 }
